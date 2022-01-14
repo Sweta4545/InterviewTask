@@ -35,7 +35,6 @@ public class AccountController {
 		}
 		AccountForm accountForm = new AccountForm();
 		
-		// if fined questionId then edit Question
 		if (request.getParameter("accountId") != null) {
 			Long accountId = Long.parseLong(request.getParameter("accountId"));
 			List<Account> accountlist = accountService.getAccountByAccountId(accountId);
@@ -80,7 +79,6 @@ public class AccountController {
 			} 
 			else {
 				
-				// update Question and Answer
 				account.setAccountId(accountForm.getAccountId());
 				accountService.updateAccount(account);
 				}
