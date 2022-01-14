@@ -11,7 +11,9 @@
 </head>
 <body>
 
-<a href="register.html">login</a>
+<a href="customer/customerLogin.html">Customer</a>
+<a href="admin/adminLogin.html">Admin</a>
+
 
 
 </body>

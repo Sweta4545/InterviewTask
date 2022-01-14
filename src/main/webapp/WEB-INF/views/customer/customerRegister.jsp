@@ -8,14 +8,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<div class="col-md-12 col-md-offset-3" style="border-radius: 5px;
-  background-color: #F0F8FF;
-  height:800px;
-  padding: 20px;">
+<body style="background-color: #F0F8FF;">
 
-<form:form action="register.html" modelAttribute="customerForm">
-		<table align="center">
+<form:form action="customerRegister.html" modelAttribute="customerForm">
+		<table>
 			<tr>
 				<td><form:label path="fullName">Full Name:</form:label> <FONT color="red"><form:errors path="fullName" /></FONT></td>
 				<td><form:input path="fullName" size="26" /></td>
@@ -73,6 +69,5 @@
 
 		</table>
 	</form:form>
-</div>
 </body>
 </html>

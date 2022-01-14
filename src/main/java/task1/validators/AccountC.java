@@ -1,41 +1,25 @@
-package task1.model;
+package task1.validators;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "account")
-public class Account {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "account_id")
+public class AccountC {
 	private Long accountId;
-	
-	@Column(name = "account_number")
 	private String accountNumber;
-	
-	@Column(name = "account_open_date")
 	private Date accountOpenDate;
-	
-	@Column(name = "account_close_date")
 	private Date accountCloseDate;
-	
-	@Column(name = "balance")
 	private int balance;
-	
-	@Column(name = "account_type")
 	private String accountType;
-	
-	@Column(name = "customer_id")
 	private Long customerId;
 	
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
 
 	public Long getAccountId() {
 		return accountId;
@@ -65,15 +49,15 @@ public class Account {
 		return accountCloseDate;
 	}
 
-	public void setAccountCloseDate(Date accountClosedDate) {
-		this.accountCloseDate = accountClosedDate;
+	public void setAccountCloseDate(Date accountCloseDate) {
+		this.accountCloseDate = accountCloseDate;
 	}
 
 	public int getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
 
@@ -84,16 +68,5 @@ public class Account {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-
-	public Long getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-
-	
-
 
 }

@@ -18,7 +18,7 @@
 
 <context:property-placeholder location="classpath:jdbc.properties" />
 		
-	<context:component-scan base-package="task" />
+	<context:component-scan base-package="task1" />
 
 	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
 	
@@ -47,6 +47,9 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>task1.model.Customer</value>
+				<value>task1.model.Admin</value>
+				<value>task1.model.Account</value>
+				
 			</list>
 		</property>
 		<property name="hibernateProperties">

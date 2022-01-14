@@ -8,14 +8,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<div class="col-md-12 col-md-offset-3" style="border-radius: 5px;
-  background-color: #F0F8FF;
-  height:800px;
-  padding: 20px;">
+<body style="background-color: #F0F8FF;">
 
-<form:form modelAttribute="customer" action="login.html" >
-		<table align="center" height=200>
+<form:form modelAttribute="customer" action="customerLogin.html" >
+		<table>
 			<tr>
 				<td><div class="form-group"><form:label path="emailAddress">Email Address:</form:label></div></td>
 				<td><form:input class="form-control" path="emailAddress" /></td>
@@ -37,9 +33,8 @@
 			<tr><td></td>
 				<td><input class="btn btn-outline-success" type="submit" value="Login" /></td>
 			</tr>
-			<tr><td></td><td><a href="register.html"> Register</a></td></tr>
+			<tr><td></td><td><a href="customerRegister.html"> Register</a></td></tr>
 		</table>
 	</form:form>
-</div>
 </body>
 </html>

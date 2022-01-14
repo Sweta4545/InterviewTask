@@ -1,39 +1,27 @@
-package task1.model;
+package task1.validators;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-@Entity
-@Table(name = "account")
-public class Account {
+import org.hibernate.validator.constraints.NotEmpty;
+
+public class AccountForm {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "account_id")
 	private Long accountId;
 	
-	@Column(name = "account_number")
+	@NotEmpty
+	@Size(max = 50)
 	private String accountNumber;
 	
-	@Column(name = "account_open_date")
 	private Date accountOpenDate;
-	
-	@Column(name = "account_close_date")
 	private Date accountCloseDate;
 	
-	@Column(name = "balance")
 	private int balance;
 	
-	@Column(name = "account_type")
+	@Size(max = 100)
 	private String accountType;
 	
-	@Column(name = "customer_id")
 	private Long customerId;
 	
 
@@ -65,15 +53,15 @@ public class Account {
 		return accountCloseDate;
 	}
 
-	public void setAccountCloseDate(Date accountClosedDate) {
-		this.accountCloseDate = accountClosedDate;
+	public void setAccountCloseDate(Date accountCloseDate) {
+		this.accountCloseDate = accountCloseDate;
 	}
 
 	public int getBalance() {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
 
@@ -93,7 +81,6 @@ public class Account {
 		this.customerId = customerId;
 	}
 
-	
-
+		
 
 }
