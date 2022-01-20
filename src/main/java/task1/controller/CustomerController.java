@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import task1.model.Account;
+import task1.model.Admin;
 import task1.model.Customer;
 import task1.service.AccountService;
 import task1.service.CustomerService;
 import task1.validators.CustomerForm;
+import task1.validators.LoginValidator;
 import task1.validators.RegisterValidator;
 
 @Controller
@@ -31,6 +33,8 @@ public class CustomerController {
 	private AccountService accountService;
 	@Autowired
 	RegisterValidator registerValidater;
+	@Autowired
+	private LoginValidator loginValidator;
 
 	@RequestMapping(value = "/customer/customerLogin", method = RequestMethod.GET)
 	public ModelAndView showCustomerLogin(Map<String, Customer> model, HttpSession session) {
@@ -42,6 +46,23 @@ public class CustomerController {
 			return new ModelAndView("redirect:customerHome.html");
 
 		}
+	}
+	
+	@RequestMapping(value = "/customer/customerLogin", method = RequestMethod.POST)
+	public ModelAndView processCustomerLogin(@Valid Customer customer, BindingResult result, Map<?, ?> model, HttpSession session) {
+		loginValidator.customerValidate(customer, result);
+		if (result.hasErrors()) {
+			return new ModelAndView("/customer/customerLogin");
+		}
+		List<Customer> cutomerList = customerService.getCustomerByCustomerEmail(customer.getEmailAddress());
+		if (cutomerList != null && cutomerList.size() > 0) {
+			Customer customer2 = new Customer();
+			customer2 = (Customer) cutomerList.get(0);
+			session.setAttribute("fullName", customer2.getFullName());
+		}
+		session.setAttribute("emailAddress", customer.getEmailAddress());
+		return new ModelAndView("redirect:customerHome.html");
+
 	}
 
 	

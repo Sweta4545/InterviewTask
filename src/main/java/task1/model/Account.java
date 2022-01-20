@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "account")
@@ -31,10 +35,10 @@ public class Account {
 	private int balance;
 	
 	@Column(name = "account_type")
-	private String accountType;
+	private AccountType accountType;
 	
-	@Column(name = "customer_id")
-	private Long customerId;
+	@OneToOne 
+	private Customer customer;
 	
 
 	public Long getAccountId() {
@@ -77,22 +81,23 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public String getAccountType() {
+	public AccountType getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(String accountType) {
+	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
 
-	public Long getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
+	
 	
 
 

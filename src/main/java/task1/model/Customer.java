@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -51,6 +52,9 @@ public class Customer {
 	
 	@Column(name = "id_value")
 	private String idValue;
+	
+	@OneToOne 
+	private Account account;
 
 	public int getCustomerId() {
 		return customerId;
@@ -138,6 +142,14 @@ public class Customer {
 
 	public void setIdValue(String idValue) {
 		this.idValue = idValue;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	

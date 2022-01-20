@@ -43,7 +43,7 @@ public class AccountDaoImpl implements AccountDao {
 		sessionFactory
 		.getCurrentSession()
 		.createQuery(
-		"UPDATE Account SET accountNumber=:accountNumber , accountOpenDate=:accountOpenDate , accountCloseDate=:accountCloseDate , balance=:balance , accountType=:accountType , customerId=:customerId where accountId=:accountId").setParameter("accountNumber", account.getAccountNumber()).setParameter("accountOpenDate", account.getAccountOpenDate()).setParameter("accountCloseDate", account.getAccountCloseDate()).setParameter("balance", account.getBalance()).setParameter("accountType", account.getAccountType()).setParameter("customerId", account.getCustomerId()).setParameter("accountId", account.getAccountId()).executeUpdate();
+		"UPDATE Account SET accountNumber=:accountNumber , accountOpenDate=:accountOpenDate , accountCloseDate=:accountCloseDate , balance=:balance , accountType=:accountType , customer_customer_id=:customer where accountId=:accountId").setParameter("accountNumber", account.getAccountNumber()).setParameter("accountOpenDate", account.getAccountOpenDate()).setParameter("accountCloseDate", account.getAccountCloseDate()).setParameter("balance", account.getBalance()).setParameter("accountType", account.getAccountType()).setParameter("customer", account.getCustomer()).setParameter("accountId", account.getAccountId()).executeUpdate();
 		
 	}
 

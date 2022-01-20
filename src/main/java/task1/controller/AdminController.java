@@ -122,7 +122,7 @@ public class AdminController {
 			accountC.setAccountCloseDate(account.getAccountCloseDate());
 			accountC.setBalance(account.getBalance());
 			accountC.setAccountType(account.getAccountType());
-			accountC.setCustomerId(account.getCustomerId());
+			accountC.setCustomer(account.getCustomer());
 
 
 		

@@ -2,6 +2,9 @@ package task1.validators;
 
 import java.sql.Date;
 
+import task1.model.AccountType;
+import task1.model.Customer;
+
 
 public class AccountC {
 	private Long accountId;
@@ -9,16 +12,18 @@ public class AccountC {
 	private Date accountOpenDate;
 	private Date accountCloseDate;
 	private int balance;
-	private String accountType;
-	private Long customerId;
+	private AccountType accountType;
+	private Customer customer ;
 	
 
-	public Long getCustomerId() {
-		return customerId;
+	
+
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public Long getAccountId() {
@@ -61,11 +66,11 @@ public class AccountC {
 		this.balance = balance;
 	}
 
-	public String getAccountType() {
+	public AccountType getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(String accountType) {
+	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
 

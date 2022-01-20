@@ -6,6 +6,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import task1.model.AccountType;
+import task1.model.Customer;
+
 public class AccountForm {
 	
 	private Long accountId;
@@ -20,9 +23,9 @@ public class AccountForm {
 	private int balance;
 	
 	@Size(max = 100)
-	private String accountType;
+	private AccountType accountType;
 	
-	private Long customerId;
+	private Customer customer ;
 	
 
 	public Long getAccountId() {
@@ -65,21 +68,23 @@ public class AccountForm {
 		this.balance = balance;
 	}
 
-	public String getAccountType() {
+	public AccountType getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(String accountType) {
+	public void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
 
-	public Long getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
+
+	
 
 		
 

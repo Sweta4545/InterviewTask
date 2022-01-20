@@ -44,7 +44,7 @@ Account Details<br>
 						<th><core:out value="AccountCloseDate"></core:out></th>
 						<th><core:out value="Balance"></core:out></th>
 						<th><core:out value="AccountType"></core:out></th>
-						<th><core:out value="CustomerId"></core:out></th>
+						<th><core:out value="Customer"></core:out></th>
 						<th><core:out value="Action"></core:out></th>
 					</tr>
 					<core:forEach var="account" items="${allAccountList}">
@@ -54,7 +54,7 @@ Account Details<br>
 							<td><core:out value="${account.accountCloseDate}"></core:out></td>
 							<td><core:out value="${account.balance}"></core:out></td>
 							<td><core:out value="${account.accountType}"></core:out></td>
-							<td><core:out value="${account.customerId}"></core:out></td>
+							<td><core:out value="${account.customer}"></core:out></td>
 							<td><a
 								href="deleteAccount.html?accountId=${account.accountId}"><i
 									class="far fa-trash-alt"></i></a>

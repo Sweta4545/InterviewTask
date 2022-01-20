@@ -1,5 +1,6 @@
 package task1.controller;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import task1.model.Admin;
 import task1.model.Account;
-
+import task1.model.AccountType;
 import task1.service.AccountService;
 import task1.validators.AccountForm;
 
@@ -46,11 +47,14 @@ public class AccountController {
 				accountForm.setAccountCloseDate(account.getAccountCloseDate());
 				accountForm.setBalance(account.getBalance());
 				accountForm.setAccountType(account.getAccountType());
-				accountForm.setCustomerId(account.getCustomerId());
+				accountForm.setCustomer(account.getCustomer());
 
 			}
 				
 		}
+		/*List<AccountType> enums = Arrays.asList(AccountType.values());
+	    model.put("accountType",enums);*/
+		model.put("accountType", AccountType.values());
 		model.put("accountForm", accountForm);
 		return "/admin/addAccount";
 	}
@@ -69,7 +73,7 @@ public class AccountController {
 			account.setAccountCloseDate(accountForm.getAccountCloseDate());
 			account.setBalance(accountForm.getBalance());
 			account.setAccountType(accountForm.getAccountType());
-			account.setCustomerId(accountForm.getCustomerId());
+			account.setCustomer(accountForm.getCustomer());
 
 
 			
